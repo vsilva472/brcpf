@@ -1,0 +1,35 @@
+{
+  "name": "vsilva472/brcpf",
+  "description": "Validação de CPF para Laravel 9+",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Vinicius Silva",
+      "email": "vsilva472@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Vsilva472\\BrCpf\\": "src/"
+    }
+  },
+  "require": {
+    "vsilva472/phpcpf": "^1.0",
+    "laravel/framework": "^9.0|^10.0|^11.0|^12.0",
+    "php": ">=8.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.0"
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Vsilva472\\BrCpf\\Providers\\CpfServiceProvider"
+      ]
+    }
+  }
+}
