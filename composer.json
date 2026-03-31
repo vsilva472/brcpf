@@ -24,8 +24,8 @@
     }
   },
   "require": {
-    "php": ">=8.0",
-    "illuminate/contracts": ">=9.0 <14.0",
+    "php": ">=8.1",
+    "illuminate/contracts": "^10.0|^11.0|^12.0|^13.0",
     "vsilva472/phpcpf": "^1.0"
   },
   "extra": {
@@ -36,6 +36,6 @@
     }
   },
   "require-dev": {
-    "orchestra/testbench": "^7.0|^8.0|^9.0|^10.0|^11.0"
+    "orchestra/testbench": "^8.0|^9.0|^10.0|^11.0"
   }
 }

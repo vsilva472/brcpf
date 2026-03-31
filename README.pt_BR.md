@@ -9,6 +9,13 @@ Valide CPFs brasileiros no Laravel com ou sem máscara.
 
 ---
 
+> ⚠️ **Mudança importante**
+>
+> A versão 2+ não oferece mais suporte ao Laravel 9.
+> Se você utiliza Laravel 9, use a versão `1.0.x`.
+
+---
+
 
 ## ✨ Funcionalidades
 

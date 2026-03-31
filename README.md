@@ -9,10 +9,17 @@ Laravel CPF validation rule for validating Brazilian CPF numbers (formatted or u
 
 ---
 
+> ⚠️ **Breaking change**
+>
+> Version 2+ dropped support for Laravel 9.
+> If you are using Laravel 9, please use version `1.0.x`.
+
+---
+
 ## ✨ Features
 
 * ✅ Supports formatted and unformatted CPF
-* ✅ Laravel 9 → 13+ compatible
+* ✅ Laravel 10 → 13+ compatible
 * ✅ Zero configuration (auto-discovery)
 * ✅ Lightweight and dependency-free
 * ✅ Translatable validation messages
@@ -24,8 +31,6 @@ Laravel CPF validation rule for validating Brazilian CPF numbers (formatted or u
 ```bash
 composer require vsilva472/brcpf
 ```
-
----
 
 ## 🚀 Usage
 
@@ -74,8 +79,8 @@ lang/vendor/brcpf/validation.php
 
 ## 🔧 Requirements
 
-* PHP >= 8.0
-* Laravel 9 or higher
+* PHP >= 8.1
+* Laravel 10 or higher
 
 > Need support for older Laravel versions?
 > Check: https://github.com/vsilva472/laravel-cpf
