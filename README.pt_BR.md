@@ -1,69 +1,88 @@
-# Validação de CPF compatível com Laravel 9 ou superior
+# 🇧🇷 Validação de CPF para Laravel
+Valide CPFs brasileiros no Laravel com ou sem máscara.
+
+[![Versão](https://img.shields.io/packagist/v/vsilva472/brcpf.svg)]()
+[![Downloads](https://img.shields.io/packagist/dt/vsilva472/brcpf.svg)]()
+[![Licença](https://img.shields.io/github/license/vsilva472/brcpf)]()
 
 [🇺🇸 Read in English](README.md)
 
-## Descrição
-
-Este pacote adiciona uma regra de validação ao Laravel 9+ para verificar números de CPF (Cadastro de Pessoas Físicas), com ou sem máscara (`999.999.999-99`), de forma simples e eficiente.
+---
 
 
-## Requisitos 
-- [Laravel 9](https://laravel.com/) ou superior
+## ✨ Funcionalidades
 
-> Se você precisa validar CPFs em versões anteriores do Laravel, talvez o pacote [laravel-cpf](https://github.com/vsilva472/laravel-cpf) possa te ajudar.
+* ✅ Aceita CPF com ou sem máscara
+* ✅ Compatível com Laravel 9 → 13+
+* ✅ Zero configuração (auto-discovery)
+* ✅ Leve e sem dependências desnecessárias
+* ✅ Mensagens de validação traduzíveis
 
-## Instalação
+---
 
-Via Composer:
+## 📦 Instalação
 
 ```bash
 composer require vsilva472/brcpf
 ```
 
-## Personalizando a mensagem de erro
+---
 
-Você pode publicar os arquivos de tradução para personalizar a mensagem de validação. Eles serão disponibilizados em `lang/vendor/brcpf`:
-
-```bash
-php artisan vendor:publish --tag=brcpf
-```
-
-## Como usar
+## 🚀 Uso
 
 ### Validação direta
 
 ```php
 use Vsilva472\BrCpf\Rules\Cpf;
 
-$this->validate($request, [
-    'cpf' => ['required', new Cpf],
+$request->validate([
+    'cpf' => ['required', new Cpf()],
 ]);
 ```
 
-### Validação com Form Request
+---
+
+### Usando Form Request
 
 ```php
-namespace App\Http\Requests;
-
-use Illuminate\Foundation\Http\FormRequest;
 use Vsilva472\BrCpf\Rules\Cpf;
 
-class SeuFormRequest extends FormRequest
+public function rules()
 {
-    public function authorize()
-    {
-        return true;
-    }
-
-    public function rules()
-    {
-        return [
-            'cpf' => ['required', new Cpf],
-        ];
-    }
+    return [
+        'cpf' => ['required', new Cpf()],
+    ];
 }
 ```
 
-## Licença
+---
 
-Este projeto está licenciado sob a [Licença MIT](LICENSE).
+## 🌍 Personalizando mensagens
+
+Publique os arquivos de tradução:
+
+```bash
+php artisan vendor:publish --tag=brcpf
+```
+
+Depois edite:
+
+```
+lang/vendor/brcpf/validation.php
+```
+
+---
+
+## 🔧 Requisitos
+
+* PHP >= 8.0
+* Laravel 9 ou superior
+
+> Precisa de suporte para versões mais antigas do Laravel?
+> Veja: https://github.com/vsilva472/laravel-cpf
+
+---
+
+## 📄 Licença
+
+MIT

@@ -1,11 +1,7 @@
 <?php
 namespace Vsilva472\BrCpf\Providers;
 
-use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-use Vsilva472\BrCpf\Rules\Cpf;
-use Vsilva472\phpCPF\CPF as CpfValidator;
-
 class CpfServiceProvider extends ServiceProvider
 {
     /**
@@ -15,14 +11,6 @@ class CpfServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->bootTranslations();
-        $this->bootBindings();
-    }
-
-    /**
-     * Translations
-     */
-    protected function bootTranslations(): void {
         $this->loadTranslationsFrom(__DIR__.'/../../lang', 'brcpf');
  
         $this->publishes([
@@ -30,12 +18,4 @@ class CpfServiceProvider extends ServiceProvider
         ], 'brcpf');
     }
 
-    /**
-     * Binds
-     */
-    protected function bootBindings(): void {
-        $this->app->singleton(Cpf::class, function (Application $app) {
-            return new Cpf($app->make(CpfValidator::class));
-        });
-    }
 }

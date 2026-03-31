@@ -1,35 +1,42 @@
 {
   "name": "vsilva472/brcpf",
-  "description": "Validação de CPF para Laravel 9+",
+  "description": "Brazilian CPF validation rule for Laravel (supports formatted and unformatted CPF)",
   "type": "library",
   "license": "MIT",
-  "authors": [
-    {
-      "name": "Vinicius Silva",
-      "email": "vsilva472@gmail.com"
-    }
+  "keywords": [
+    "laravel",
+    "cpf",
+    "brazil",
+    "validation",
+    "cpf validation",
+    "laravel cpf",
+    "brazilian cpf",
+    "laravel validation rule"
   ],
   "autoload": {
     "psr-4": {
       "Vsilva472\\BrCpf\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
   "require": {
-    "vsilva472/phpcpf": "^1.0",
-    "laravel/framework": "^9.0|^10.0|^11.0|^12.0",
-    "php": ">=8.0"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^10.0"
-  },
-  "scripts": {
-    "test": "./vendor/bin/phpunit"
+    "php": ">=8.0",
+    "illuminate/contracts": ">=9.0 <14.0",
+    "vsilva472/phpcpf": "^1.0"
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Vsilva472\\BrCpf\\Providers\\CpfServiceProvider"
+        "Vsilva472\\BrCpf\\CpfServiceProvider"
       ]
     }
+  },
+  "require-dev": {
+    "orchestra/testbench": "^11.0",
+    "phpunit/phpunit": "^12.5"
   }
 }
