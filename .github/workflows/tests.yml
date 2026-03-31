@@ -48,6 +48,8 @@ jobs:
 
       - name: Install dependencies
         run: |
+          composer config --no-interaction audit.block-insecure false
+
           composer require \
             "laravel/framework:${{ matrix.laravel }}" \
             "orchestra/testbench:${{ matrix.testbench }}" \
