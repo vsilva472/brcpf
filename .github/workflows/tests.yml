@@ -49,6 +49,7 @@ jobs:
           composer require \
             "laravel/framework:${{ matrix.laravel }}" \
             "orchestra/testbench:${{ matrix.testbench }}" \
+            --dev \
             --no-update
 
           composer update --prefer-dist --no-interaction
