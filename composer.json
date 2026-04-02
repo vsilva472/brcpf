@@ -31,7 +31,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Vsilva472\\BrCpf\\CpfServiceProvider"
+        "Vsilva472\\BrCpf\\Providers\\BrCpfServiceProvider"
       ]
     }
   },

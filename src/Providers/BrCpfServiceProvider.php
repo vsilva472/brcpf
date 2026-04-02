@@ -2,7 +2,7 @@
 namespace Vsilva472\BrCpf\Providers;
 
 use Illuminate\Support\ServiceProvider;
-class CpfServiceProvider extends ServiceProvider
+class BrCpfServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
