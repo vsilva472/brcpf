@@ -56,11 +56,46 @@ class LaravelValidationTest extends TestCase
         $this->assertTrue($validator->fails());
     }
 
-    private function validateCpf($cpf)
+    public function test_nullable_allows_null()
+    {
+        $validator = $this->validateCpf(null, ['nullable']);
+
+        $this->assertFalse($validator->fails());
+    }
+
+    public function test_nullable_with_valid_cpf_passes()
+    {
+        $validator = $this->validateCpf('401.766.550-00', ['nullable']);
+
+        $this->assertFalse($validator->fails());
+    }
+
+    public function test_nullable_with_valid_plain_cpf_passes()
+    {
+        $validator = $this->validateCpf('40176655000', ['nullable']);
+
+        $this->assertFalse($validator->fails());
+    }
+
+    public function test_nullable_with_invalid_cpf_fails()
+    {
+        $validator = $this->validateCpf('00000000000', ['nullable']);
+
+        $this->assertTrue($validator->fails());
+    }
+
+    public function test_nullable_with_empty_string_passes()
+    {
+        $validator = $this->validateCpf('', ['nullable']);
+
+        $this->assertFalse($validator->fails());
+    }
+
+    private function validateCpf($cpf, array $rules = [])
     {
         return Validator::make(
             ['cpf' => $cpf],
-            ['cpf' => [new Cpf()]]
+            ['cpf' => [...$rules, new Cpf()]]
         );
     }
 }

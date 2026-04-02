@@ -17,6 +17,10 @@ class Cpf implements ValidationRule
 
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
+        if ($value === null || $value === '') {
+            return;
+        }
+
         if (! $this->validator->validate($value)) {
             $fail('brcpf::validation.cpf')->translate();
         }
