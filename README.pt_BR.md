@@ -20,7 +20,7 @@ Valide CPFs brasileiros no Laravel com ou sem máscara.
 ## ✨ Funcionalidades
 
 * ✅ Aceita CPF com ou sem máscara
-* ✅ Compatível com Laravel 9 → 13+
+* ✅ Compatível com Laravel 10 → 13+
 * ✅ Zero configuração (auto-discovery)
 * ✅ Leve e sem dependências desnecessárias
 * ✅ Mensagens de validação traduzíveis
@@ -82,8 +82,8 @@ lang/vendor/brcpf/validation.php
 
 ## 🔧 Requisitos
 
-* PHP >= 8.0
-* Laravel 9 ou superior
+* PHP >= 8.1
+* Laravel 10 ou superior
 
 > Precisa de suporte para versões mais antigas do Laravel?
 > Veja: https://github.com/vsilva472/laravel-cpf
